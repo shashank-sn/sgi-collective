@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>sgi collective</title>
+<meta name="description" content="sgi collective — a new venture building firm. we manufacture ideas, take them to market, and roll them out as independent companies." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1c1b22;
+    --muted: #6a6776;
+    --accent: #2ecc8b;
+    --divider: rgba(28,27,34,0.14);
+    --shadow: rgba(80,60,100,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    background: #fdfcfb;
+    line-height: 1.75;
+    font-size: 16px;
+    letter-spacing: 0.005em;
+    text-transform: lowercase;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* mostly white with soft pastel hints, breathing very mildly */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -10%;
+    background:
+      radial-gradient(ellipse 50% 40% at 15% 18%, rgba(247,200,214,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 55% 45% at 85% 20%, rgba(243,182,200,0.30) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 75% 80%, rgba(185,201,238,0.32) 0%, transparent 72%),
+      radial-gradient(ellipse 50% 45% at 18% 85%, rgba(216,197,232,0.30) 0%, transparent 72%);
+    filter: blur(70px);
+    z-index: -2;
+    animation: breathe 26s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.85; }
+    50%      { transform: scale(1.04) translate(0.8%, -0.6%); opacity: 1; }
+  }
+
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .brand img { height: 28px; width: auto; display: block; }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 180px 32px 120px;
+  }
+
+  section { margin-bottom: 96px; }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5.2vw, 58px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    color: var(--text);
+    font-variation-settings: "opsz" 144;
+  }
+
+  h1 em {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    margin-bottom: 28px;
+    color: var(--muted);
+    text-transform: lowercase;
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 18px;
+    max-width: 62ch;
+    font-weight: 300;
+  }
+
+  .intro p { font-size: 17.5px; line-height: 1.8; }
+
+  .philosophy {
+    padding: 24px 0;
+    margin: 40px 0;
+  }
+
+  .philosophy p {
+    font-family: 'Fraunces', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(22px, 2.8vw, 30px);
+    line-height: 1.4;
+    margin-bottom: 0;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    font-variation-settings: "opsz" 144;
+  }
+
+  .people-list {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin-top: 20px;
+  }
+
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(1);
+    flex-shrink: 0;
+    box-shadow: 0 6px 20px var(--shadow);
+    display: block;
+  }
+
+  .person-info { display: flex; flex-direction: column; }
+
+  .person-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    letter-spacing: -0.005em;
+  }
+
+  .person-role {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+
+  .person a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    width: fit-content;
+    font-weight: 500;
+  }
+  .person a:hover { border-bottom-color: var(--accent); }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .contact-links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    transition: color 0.3s ease;
+    font-weight: 400;
+  }
+  .contact-links a::before {
+    content: "→";
+    color: var(--muted);
+    transition: transform 0.3s ease;
+  }
+  .contact-links a:hover { color: var(--accent); }
+  .contact-links a:hover::before { transform: translateX(4px); color: var(--accent); }
+
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 32px 60px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 20px 24px; }
+    main { padding: 130px 24px 80px; }
+    section { margin-bottom: 72px; }
+    .avatar { width: 56px; height: 56px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand"><img src="logo.png" alt="sgi collective" /></a>
+</header>
+
+<main>
+
+  <section class="intro">
+    <h1>we manufacture ideas, take them to market, and <em>roll them out</em> as independent companies.</h1>
+    <p>sgi collective is a new venture building firm where we manufacture ideas, experiment with ideas by taking them to market, and if there is an idea-market fit, we roll them out as independent companies.</p>
+    <p>we partner with business owners and leaders who are building for impact.</p>
+  </section>
+
+  <section class="philosophy">
+    <p>we believe in the philosophy — courage over knowledge.</p>
+  </section>
+
+  <section>
+    <h2>how we work</h2>
+    <p>we take ideas to market as fast as possible, because we believe that the market is the market is the market.</p>
+    <p>we work with business owners and coaches who have depth, high energy, high integrity, and are quick on their feet. our goal is to help the people we work with manifest their best selves.</p>
+  </section>
+
+  <section>
+    <h2>people</h2>
+    <div class="people-list">
+
+      <div class="person">
+        <img class="avatar" src="people%20photos/sudhar.jpg" alt="sudharsanan ganapathy" />
+        <div class="person-info">
+          <span class="person-name">sudharsanan ganapathy</span>
+          <span class="person-role">managing partner & ceo</span>
+          <a href="https://www.linkedin.com/in/sudharsananganapathy/" target="_blank" rel="noopener">linkedin</a>
+        </div>
+      </div>
+
+      <div class="person">
+        <img class="avatar" src="people%20photos/sai.jpeg" alt="sai nethra kara" />
+        <div class="person-info">
+          <span class="person-name">sai nethra kara</span>
+          <span class="person-role">partner & coo</span>
+          <a href="https://www.linkedin.com/in/sainethrakara/" target="_blank" rel="noopener">linkedin</a>
+        </div>
+      </div>
+
+      <div class="person">
+        <img class="avatar" src="people%20photos/sakthi.jpeg" alt="sakthi ektha n" />
+        <div class="person-info">
+          <span class="person-name">sakthi ektha n</span>
+          <span class="person-role">partner & cbo</span>
+          <a href="https://www.linkedin.com/in/sakthiektha/" target="_blank" rel="noopener">linkedin</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>get in touch</h2>
+    <div class="contact-links">
+      <a href="mailto:hello@wearesgi.com">hello@wearesgi.com</a>
+      <a href="https://www.linkedin.com/company/sgicollective/" target="_blank" rel="noopener">linkedin</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © sgi collective 2026 — made with courage.
+</footer>
+
+</body>
+</html>
