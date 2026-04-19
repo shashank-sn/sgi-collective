@@ -7,15 +7,14 @@
 <meta name="description" content="sgi collective — a new venture building firm. we manufacture ideas, take them to market, and roll them out as independent companies." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ede4d3;
-    --text: #1f1d1a;
-    --muted: #6e675c;
+    --text: #1c1b22;
+    --muted: #6a6776;
     --accent: #2ecc8b;
-    --divider: rgba(31,29,26,0.15);
-    --shadow: rgba(60,50,30,0.08);
+    --divider: rgba(28,27,34,0.14);
+    --shadow: rgba(80,60,100,0.10);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +24,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     color: var(--text);
-    background: #ede4d3;
+    background: #fdfcfb;
     line-height: 1.75;
     font-size: 16px;
     letter-spacing: 0.005em;
@@ -35,32 +34,24 @@
     position: relative;
   }
 
-  /* breathing cream gradient — warm sandy layers */
+  /* mostly white with soft pastel hints, breathing very mildly */
   body::before {
     content: "";
     position: fixed;
-    inset: -15%;
+    inset: -10%;
     background:
-      radial-gradient(ellipse at 15% 20%, #f4ecdb 0%, transparent 45%),
-      radial-gradient(ellipse at 85% 15%, #e5d9c1 0%, transparent 50%),
-      radial-gradient(ellipse at 70% 85%, #f0e6d1 0%, transparent 55%),
-      radial-gradient(ellipse at 20% 90%, #e8ddc6 0%, transparent 50%);
-    z-index: -1;
-    animation: breathe 20s ease-in-out infinite;
-  }
-
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 40%, rgba(180,160,120,0.08) 100%);
-    pointer-events: none;
-    z-index: -1;
+      radial-gradient(ellipse 50% 40% at 15% 18%, rgba(247,200,214,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 55% 45% at 85% 20%, rgba(243,182,200,0.30) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 75% 80%, rgba(185,201,238,0.32) 0%, transparent 72%),
+      radial-gradient(ellipse 50% 45% at 18% 85%, rgba(216,197,232,0.30) 0%, transparent 72%);
+    filter: blur(70px);
+    z-index: -2;
+    animation: breathe 26s ease-in-out infinite;
   }
 
   @keyframes breathe {
-    0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.95; }
-    50%      { transform: scale(1.06) translate(1.5%, -1%); opacity: 1; }
+    0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.85; }
+    50%      { transform: scale(1.04) translate(0.8%, -0.6%); opacity: 1; }
   }
 
   header {
@@ -68,18 +59,13 @@
     top: 0; left: 0; right: 0;
     padding: 28px 48px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     z-index: 100;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
-  .brand img {
-    height: 28px;
-    width: auto;
-    display: block;
-  }
+  .brand img { height: 28px; width: auto; display: block; }
 
   main {
     max-width: 720px;
@@ -89,37 +75,31 @@
 
   section { margin-bottom: 96px; }
 
-  .hero-logo {
-    max-width: 240px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 56px;
-    display: block;
-  }
-
   h1 {
     font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(34px, 5vw, 54px);
-    line-height: 1.18;
+    font-weight: 400;
+    font-size: clamp(36px, 5.2vw, 58px);
+    line-height: 1.15;
     letter-spacing: -0.02em;
     margin-bottom: 32px;
+    color: var(--text);
     font-variation-settings: "opsz" 144;
   }
 
   h1 em {
-    font-style: italic;
-    font-weight: 300;
+    font-style: normal;
+    font-weight: 400;
     color: var(--accent);
   }
 
   h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(24px, 3vw, 30px);
-    letter-spacing: -0.01em;
-    margin-bottom: 22px;
-    font-variation-settings: "opsz" 144;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    margin-bottom: 28px;
+    color: var(--muted);
+    text-transform: lowercase;
   }
 
   p {
@@ -127,31 +107,33 @@
     color: var(--text);
     margin-bottom: 18px;
     max-width: 62ch;
+    font-weight: 300;
   }
 
   .intro p { font-size: 17.5px; line-height: 1.8; }
 
   .philosophy {
-    padding: 36px 0;
-    border-top: 1px solid var(--divider);
-    border-bottom: 1px solid var(--divider);
-    margin: 56px 0;
+    padding: 24px 0;
+    margin: 40px 0;
   }
 
   .philosophy p {
     font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: clamp(22px, 2.6vw, 28px);
-    font-weight: 300;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(22px, 2.8vw, 30px);
     line-height: 1.4;
     margin-bottom: 0;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    font-variation-settings: "opsz" 144;
   }
 
   .people-list {
     display: flex;
     flex-direction: column;
     gap: 36px;
-    margin-top: 36px;
+    margin-top: 20px;
   }
 
   .person {
@@ -164,25 +146,27 @@
     width: 68px;
     height: 68px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #d4ccbb, #a8a092);
+    object-fit: cover;
     filter: grayscale(1);
     flex-shrink: 0;
     box-shadow: 0 6px 20px var(--shadow);
+    display: block;
   }
 
   .person-info { display: flex; flex-direction: column; }
 
   .person-name {
-    font-family: 'Fraunces', serif;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 600;
     margin-bottom: 2px;
+    letter-spacing: -0.005em;
   }
 
   .person-role {
     color: var(--muted);
     font-size: 13px;
     margin-bottom: 6px;
+    font-weight: 300;
   }
 
   .person a {
@@ -192,6 +176,7 @@
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease;
     width: fit-content;
+    font-weight: 500;
   }
   .person a:hover { border-bottom-color: var(--accent); }
 
@@ -199,62 +184,73 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-top: 24px;
+    margin-top: 14px;
   }
 
   .contact-links a {
     color: var(--text);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
     font-size: 16px;
     display: inline-flex;
     align-items: center;
     gap: 12px;
     width: fit-content;
-    border-bottom: 1px solid var(--divider);
-    padding-bottom: 6px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
+    font-weight: 400;
   }
   .contact-links a::before {
     content: "→";
     color: var(--muted);
     transition: transform 0.3s ease;
   }
-  .contact-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .contact-links a:hover { color: var(--accent); }
   .contact-links a:hover::before { transform: translateX(4px); color: var(--accent); }
 
   footer {
     max-width: 720px;
     margin: 0 auto;
     padding: 40px 32px 60px;
-    border-top: 1px solid var(--divider);
     font-size: 12px;
     color: var(--muted);
     letter-spacing: 0.06em;
+    text-align: center;
   }
 
-  .variant-link {
-    position: fixed;
-    bottom: 20px;
-    right: 24px;
-    font-size: 11px;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.08em;
-    border: 1px solid var(--divider);
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.3);
-    backdrop-filter: blur(6px);
-    transition: all 0.3s ease;
+  /* tablet */
+  @media (max-width: 900px) {
+    header { padding: 24px 32px; }
+    main { padding: 150px 28px 100px; }
+    section { margin-bottom: 84px; }
+    .philosophy { padding: 20px 0; margin: 32px 0; }
   }
-  .variant-link:hover { color: var(--text); border-color: var(--text); }
 
+  /* mobile */
   @media (max-width: 640px) {
-    header { padding: 20px 24px; }
-    main { padding: 130px 24px 80px; }
-    section { margin-bottom: 72px; }
-    .avatar { width: 56px; height: 56px; }
-    .hero-logo { max-width: 180px; margin-bottom: 40px; }
+    body { font-size: 15px; line-height: 1.7; }
+    header { padding: 18px 20px; }
+    .brand img { height: 24px; }
+    main { padding: 110px 20px 70px; }
+    section { margin-bottom: 64px; }
+    h1 { margin-bottom: 24px; line-height: 1.2; letter-spacing: -0.015em; }
+    p { font-size: 15px; }
+    .intro p { font-size: 15.5px; line-height: 1.7; }
+    .philosophy { padding: 16px 0; margin: 28px 0; }
+    .people-list { gap: 28px; }
+    .person { gap: 16px; align-items: flex-start; }
+    .avatar { width: 52px; height: 52px; }
+    .person-name { font-size: 15px; }
+    .contact-links a { font-size: 15px; }
+    footer { padding: 32px 20px 44px; font-size: 11px; }
+  }
+
+  /* small mobile */
+  @media (max-width: 380px) {
+    h1 { font-size: 30px; }
+    .philosophy p { font-size: 20px; }
+    .avatar { width: 48px; height: 48px; }
+    main { padding: 96px 18px 60px; }
   }
 </style>
 </head>
@@ -287,7 +283,7 @@
     <div class="people-list">
 
       <div class="person">
-        <div class="avatar"></div>
+        <img class="avatar" src="people%20photos/sudhar.jpg" alt="sudharsanan ganapathy" />
         <div class="person-info">
           <span class="person-name">sudharsanan ganapathy</span>
           <span class="person-role">managing partner & ceo</span>
@@ -296,7 +292,7 @@
       </div>
 
       <div class="person">
-        <div class="avatar"></div>
+        <img class="avatar" src="people%20photos/sai.jpeg" alt="sai nethra kara" />
         <div class="person-info">
           <span class="person-name">sai nethra kara</span>
           <span class="person-role">partner & coo</span>
@@ -305,7 +301,7 @@
       </div>
 
       <div class="person">
-        <div class="avatar"></div>
+        <img class="avatar" src="people%20photos/sakthi.jpeg" alt="sakthi ektha n" />
         <div class="person-info">
           <span class="person-name">sakthi ektha n</span>
           <span class="person-role">partner & cbo</span>
@@ -329,8 +325,6 @@
 <footer>
   © sgi collective 2026 — made with courage.
 </footer>
-
-<a href="sans.html" class="variant-link">sans variant →</a>
 
 </body>
 </html>
