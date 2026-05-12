@@ -19,6 +19,18 @@
     {
       "pattern": "www.wearesgi.com/*",
       "zone_name": "wearesgi.com"
+    },
+    {
+      "pattern": "autoconfig.wearesgi.com/*",
+      "zone_name": "wearesgi.com"
+    },
+    {
+      "pattern": "ftp.wearesgi.com/*",
+      "zone_name": "wearesgi.com"
+    },
+    {
+      "pattern": "mail.wearesgi.com/*",
+      "zone_name": "wearesgi.com"
     }
   ]
 }
