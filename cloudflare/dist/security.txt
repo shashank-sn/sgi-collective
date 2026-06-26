@@ -1,0 +1,5 @@
+Contact: mailto:emailshashanksn@gmail.com
+Preferred-Languages: en
+Canonical: https://wearesgi.com/.well-known/security.txt
+Policy: https://wearesgi.com/security.txt
+Expires: 2027-05-12T00:00:00Z
